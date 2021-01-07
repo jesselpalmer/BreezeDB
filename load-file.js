@@ -1,8 +1,8 @@
-const fs = require('fs')
+import { readFileSync } from 'fs'
 
 const loadFile = (dataFile) => {
-  const rawdata = fs.readFileSync(dataFile)
+  const rawdata = readFileSync(dataFile)
   return JSON.parse(rawdata)
 }
 
-module.exports = loadFile
+export default loadFile

@@ -1,6 +1,6 @@
-const loadFile = require('./load-file')
-const saveData = require('./save-data')
-const printData = require('./print-data')
+import loadFile from './load-file.js'
+import printData from './print-data.js'
+import saveData from './save-data.js'
 
 const execute = () => {
   const fileName = 'db'

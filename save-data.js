@@ -1,10 +1,10 @@
-const fs = require('fs')
+import { writeFileSync } from 'fs'
 
 const saveData = (fileName, data, key, value) => {
   data[key] = value
   const newData = JSON.stringify(data)
-  fs.writeFileSync(fileName, newData)
+  writeFileSync(fileName, newData)
   return data
 }
 
-module.exports = saveData
+export default saveData
