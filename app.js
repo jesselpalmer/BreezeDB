@@ -8,8 +8,9 @@ const execute = () => {
   const newValue = process.argv[3]
 
   printData(
-    saveData(fileName, 
-      loadFile(fileName),
+    saveData(
+      fileName, 
+        loadFile(fileName),
       newKey,
       newValue
     )

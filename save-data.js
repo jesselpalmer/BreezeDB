@@ -1,9 +1,9 @@
 const fs = require('fs')
 
-const saveData = (dataFile, data, key, value) => {
+const saveData = (fileName, data, key, value) => {
   data[key] = value
   const newData = JSON.stringify(data)
-  fs.writeFileSync(dataFile, newData)
+  fs.writeFileSync(fileName, newData)
   return data
 }
 
