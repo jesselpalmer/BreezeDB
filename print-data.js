@@ -1,5 +1,3 @@
-const printData = (data) => {
-  console.log(data)
-}
+const printData = data => console.log(data)
 
 export default printData
