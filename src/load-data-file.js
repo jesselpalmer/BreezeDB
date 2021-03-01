@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs'
 
-const loadFile = dataFile => {
-  const rawdata = readFileSync(dataFile)
+const loadFile = dataFileUri => {
+  const rawdata = readFileSync(dataFileUri)
   return JSON.parse(rawdata)
 }
 
