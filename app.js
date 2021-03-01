@@ -1,8 +1,9 @@
 import createFile from './create-file.js'
 import doesFileExist from './does-file-exist.js'
 import loadFile from './load-file.js'
-import printData from './print-data.js'
-import saveData from './save-data.js'
+import printDataFromFile from './print-data-from-file.js'
+import saveDataToFile from './save-data-to-file.js'
+
 import DEFAULT_FILE_NAME from './constants.js'
 
 const execute = () => {
@@ -11,8 +12,8 @@ const execute = () => {
 
   doesFileExist(DEFAULT_FILE_NAME) ? true : createFile(DEFAULT_FILE_NAME)
 
-  printData(
-    saveData(
+  printDataFromFile(
+    saveDataToFile(
       DEFAULT_FILE_NAME, 
         loadFile(DEFAULT_FILE_NAME),
       newKey,
