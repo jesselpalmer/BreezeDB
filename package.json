@@ -1,7 +1,7 @@
 {
-  "name": "easy-db",
+  "name": "breezedb",
   "version": "0.0.1",
-  "description": "A very simple, lightweight datastore",
+  "description": "A simple, lightweight, persistent key/value datastore",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

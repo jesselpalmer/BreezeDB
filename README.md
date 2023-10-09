@@ -1,2 +1,3 @@
-# easy-db
-A very simple, lightweight, persistent datastore
+# BreezeDB
+
+A simple, lightweight, persistent key/value datastore
