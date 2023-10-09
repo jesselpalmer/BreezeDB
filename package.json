@@ -9,12 +9,12 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jesselpalmer/easy-db.git"
+    "url": "git+ssh://git@github.com/jesselpalmer/BreezeDB.git"
   },
   "author": "Jesse Palmer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jesselpalmer/easy-db/issues"
+    "url": "https://github.com/jesselpalmer/BreezeDB/issues"
   },
-  "homepage": "https://github.com/jesselpalmer/easy-db#readme"
+  "homepage": "https://github.com/jesselpalmer/BreezeDB#readme"
 }
