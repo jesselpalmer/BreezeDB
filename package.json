@@ -1,20 +1,91 @@
 {
   "name": "breezedb",
-  "version": "0.0.1",
-  "description": "A simple, lightweight, persistent key/value datastore",
-  "main": "app.js",
+  "version": "1.0.0",
+  "description": "A lightweight, feature-rich persistent key-value store with TTL, compression, encryption, and event support",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "lint": "eslint src/**/*.ts test/**/*.ts *.md examples/**/*.js",
+    "lint:fix": "eslint src/**/*.ts test/**/*.ts *.md examples/**/*.js --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"examples/**/*.js\" \"*.{js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\" \"examples/**/*.js\" \"*.{js,json,md}\"",
+    "type-check": "tsc --noEmit",
+    "check": "npm run type-check && npm run lint && npm run format:check && npm run test",
+    "test": "tsc -p tsconfig.test.json && mocha dist-test/test/**/*.test.js --exit",
+    "test:ci": "npm run check",
+    "example:basic": "npm run build && node examples/basic.js",
+    "example:advanced": "npm run build && node examples/advanced.js",
+    "prepublishOnly": "npm run test:ci && npm run build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "test/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "examples/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   },
   "type": "module",
+  "keywords": [
+    "database",
+    "key-value",
+    "storage",
+    "persistence",
+    "lightweight",
+    "ttl",
+    "compression",
+    "encryption",
+    "nosql",
+    "json"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jesselpalmer/BreezeDB.git"
+    "url": "git+https://github.com/jesselpalmer/BreezeDB.git"
   },
   "author": "Jesse Palmer",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jesselpalmer/BreezeDB/issues"
   },
-  "homepage": "https://github.com/jesselpalmer/BreezeDB#readme"
+  "homepage": "https://github.com/jesselpalmer/BreezeDB#readme",
+  "files": [
+    "dist/",
+    "src/",
+    "examples/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-markdown": "^5.1.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "mocha": "^11.6.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0"
+  }
 }

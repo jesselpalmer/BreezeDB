@@ -1,0 +1,21 @@
+{
+  "data": {
+    "user:1": {
+      "name": "Alice",
+      "age": 30
+    },
+    "user:2": {
+      "name": "Bob",
+      "age": 25
+    },
+    "config:theme": "dark",
+    "batch:1": "first",
+    "batch:3": "third",
+    "batch:2": "second"
+  },
+  "ttl": {
+    "batch:2": 1750049366051
+  },
+  "version": "1.0.0",
+  "timestamp": 1750049362057
+}
