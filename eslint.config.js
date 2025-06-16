@@ -135,7 +135,15 @@ export default [
 
   // Ignore patterns
   {
-    ignores: ['dist/**/*', 'node_modules/**/*', 'coverage/**/*', '*.min.js'],
+    ignores: [
+      'dist/**/*',
+      'dist-test/**/*',
+      'node_modules/**/*',
+      'coverage/**/*',
+      '*.min.js',
+      'examples/*.json',
+      'examples/*.json.backup',
+    ],
   },
 
   // Prettier integration
